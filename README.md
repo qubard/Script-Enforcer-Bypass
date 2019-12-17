@@ -1,6 +1,12 @@
 # Script-Enforcer-Bypass
 A Garry's Mod Script Enforcer bypass that I made which patches `client.dll` to allow `lua_openscript_cl` commands to execute properly. [Get it from the releases page.](https://github.com/qubard/Script-Enforcer-Bypass/releases)
 
+# Installation
+
+1. Drag and drop client.dll into `steamapps\common\Garrysmod\bin`.
+2. Restart Garry's Mod
+3. Load scripts from your `lua/` directory with `lua_openscript_cl <filename>`.
+
 # How It Works
 
 This NOPs the `JNZ` branch at `client.dll + 7cb3` called by `lua_openscript_cl` and adds `mov byte ptr [ecx + b8], 1` aka byte patch `C681B800000001FF 90 84 01 00 00 5E 5D C3` to the end of the function call to escalate lua execution privileges and change where the file loader searches for your script.
