@@ -7,7 +7,7 @@ A Garry's Mod Script Enforcer bypass that I made which patches `client.dll` to a
 2. Run `python patch.py` (get [Python3](https://www.python.org/downloads/) here).
 3. Copy the patched `client.dll` into `steamapps\common\Garrysmod\bin\client.dll`.
 4. Start Garry's Mod.
-5. Load scripts from your `lua/` directory with `lua_openscript_cl <filename>`.
+5. Load scripts from your `lua/` directory with `lua_openscript_cl <filename>` using the console.
 
 # Easy Installation
 
