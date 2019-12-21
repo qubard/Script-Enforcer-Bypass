@@ -25,7 +25,9 @@ This patch does NOT modify the `sv_allowcslua` convar whatsoever which can easil
 
 # Additional tips
 
-To obfuscate your scripts, run this Python3 script which outputs a new script that base64 encodes the script into base64 and then decodes it. Alternatively, you should override `render.capture` which can be used by server admins to take screenshots. Also, check out my other project [Chrollo](https://github.com/qubard/Chrollo) which lets you block anti-cheat scripts among many other things.
+To obfuscate your scripts, run this Python3 script which outputs a new script that base64 encodes the script into base64 and then decodes it. Alternatively, you should override `render.capture` which can be used by server admins to take screenshots. 
+
+Check out [Chrollo](https://github.com/qubard/Chrollo) which lets you block anti-cheat scripts among many other things.
 
 ```
 code = ""
