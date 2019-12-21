@@ -11,7 +11,6 @@ def sigscan(bytearr, sig):
                     break
                     
             if found:
-                print(hex(bytearr[0]) == hex(int(sig[0], 16)), sig[0] == '?')
                 return i
     return None
 
@@ -20,15 +19,13 @@ with open("client.dll", "rb") as f:
     bytes = bytearray(bytes)
     func_start = sigscan(bytes, sig)
     
-    
     if func_start is not None:
         print("Found function! Patching.. at offset " + hex(func_start))
-        NOP = int("90", 16)
-        bytes[func_start + int("33", 16)] = NOP
-        bytes[func_start + int("33", 16) + 1] = NOP
-        end = func_start + int("7c", 16)
-        patch = ['C6', '81', 'B8', '00', '00', '00', '01', 'FF', '90', '84', '01', '00', '00', '5E', '5D', 'C3']
-        patch = [int(b, 16) for b in patch] # convert to hex integers
+        NOP = 0x90
+        bytes[func_start + 0x33] = NOP
+        bytes[func_start + 0x34] = NOP
+        end = func_start + 0x7c
+        patch = [0xC6, 0x81, 0xB8, 0x00, 0x00, 0x00, 0x01, 0xFF, 0x90, 0x84, 0x01, 0x00, 0x00, 0x5E, 0x5D, 0xC3]
         for i in range(0, len(patch)):
             bytes[end + i] = patch[i]
         print("Patched..saving to disk")
@@ -39,4 +36,3 @@ with open("client.dll", "rb") as f:
             f2.write(bytes)
     else:
         print("Could not find matching function")
-
