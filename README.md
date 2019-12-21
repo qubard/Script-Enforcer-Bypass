@@ -1,15 +1,21 @@
 # Script-Enforcer-Bypass
 A Garry's Mod Script Enforcer bypass that I made which patches `client.dll` to allow `lua_openscript_cl` commands to execute properly. [Get it from the releases page.](https://github.com/qubard/Script-Enforcer-Bypass/releases)
 
-# Installation
+# Recommended Installation
 
-1. Drag and drop client.dll into `steamapps\common\Garrysmod\bin`.
+1. Copy `steamapps\common\Garrysmod\bin\client.dll` to the current directory.
+2. Run `python patch.py` (get [Python3](https://www.python.org/downloads/) here).
+3. Copy the patched `client.dll` into `steamapps\common\Garrysmod\bin\client.dll`.
+4. Start Garry's Mod.
+5. Load scripts from your `lua/` directory with `lua_openscript_cl <filename>`.
+
+# Easy Installation
+
+1. Drag and drop `client.dll` into `steamapps\common\Garrysmod\bin`.
 2. Restart Garry's Mod
 3. Load scripts from your `lua/` directory with `lua_openscript_cl <filename>`.
 
-# It doesn't work?
-
-This means that `client.dll` has been updated from the binary stored in this repository. Simply run `python patch.py` (with Python3) to patch `client.dll` in the current directory. Your `client.dll` will be backed up in case anything goes wrong, so don't worry. `patch.py` SHOULD work since it simply searches for the funciton and automatically applies the patch described below.
+This isn't guaranteed to work if `client.dll` in this repository has not been updated and patched for a new version of Garry's Mod.
 
 # How It Works
 
@@ -19,7 +25,7 @@ This patch does NOT modify the `sv_allowcslua` convar whatsoever which can easil
 
 # Additional tips
 
-To obfuscate your scripts, run this Python3 script which outputs a new script that base64 encodes the script into base64 and then decodes it. Alternatively, you should override `render.capture` which can be used by server admins to take screenshots.
+To obfuscate your scripts, run this Python3 script which outputs a new script that base64 encodes the script into base64 and then decodes it. Alternatively, you should override `render.capture` which can be used by server admins to take screenshots. Also, check out my other project [Chrollo](https://github.com/qubard/Chrollo) which lets you block anti-cheat scripts among many other things.
 
 ```
 code = ""
