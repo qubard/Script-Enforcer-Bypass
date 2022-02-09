@@ -3,9 +3,9 @@ A Garry's Mod Script Enforcer bypass that I made which patches `client.dll` to a
 
 # Recommended Installation
 
-1. Copy `steamapps\common\GarrysMod\garrysmod\bin\client.dll` to the current directory.
+1. Copy `steamapps\common\GarrysMod\garrysmod\bin\client.dll` (x86) or `steamapps\common\GarrysMod\bin\win64\client.dll` (x64) to the current directory.
 2. Run `python patch.py` (get [Python3](https://www.python.org/downloads/) here).
-3. Copy the patched `client.dll` into `steamapps\common\Garrysmod\bin\client.dll`.
+3. Copy the patched `client.dll` into `steamapps\common\GarrysMod\garrysmod\bin\client.dll` (x86) or `steamapps\common\GarrysMod\bin\win64\client.dll` (x64).
 4. Start Garry's Mod.
 5. Load scripts from your `lua/` directory with `lua_openscript_cl <filename>` using the console.
 
@@ -19,7 +19,7 @@ This isn't guaranteed to work if `client.dll` in this repository has not been up
 
 # How It Works
 
-This NOPs the `JNZ` branch at `client.dll + 7c5b3` called by `lua_openscript_cl` and adds `mov byte ptr [ecx + b8], 1` aka byte patch `C681B800000001FF 90 84 01 00 00 5E 5D C3` to the end of the function call to escalate lua execution privileges and change where the file loader searches for your script.
+This NOPs the `JNZ` branch called by `lua_openscript_cl` and adds `mov byte ptr [ecx + b8], 1` (x86) or `mov byte ptr [rcx + 168], 1` (x64) aka byte patch `C681B800000001FF 90 84 01 00 00 5E 5D C3` to the end of the function call to escalate lua execution privileges and change where the file loader searches for your script.
 
 This patch does NOT modify the `sv_allowcslua` convar whatsoever which can easily be detected by servers, and otherwise is fully undetectable (there are no sigchecks on `client.dll`) + can't get you VAC banned (no VAC on garry's mod).
 
