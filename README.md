@@ -3,7 +3,7 @@ A Garry's Mod Script Enforcer bypass that I made which patches `client.dll` to a
 
 # Recommended Installation
 
-1. Copy `steamapps\common\GarrysMod\garrysmod\bin\client.dll` (x86) or `steamapps\common\GarrysMod\bin\win64\client.dll` (x64) to the current directory.
+1. Copy `steamapps\common\GarrysMod\bin\client.dll` (x86) or `steamapps\common\GarrysMod\bin\win64\client.dll` (x64) to the current directory.
 2. Run `python patch.py` (get [Python3](https://www.python.org/downloads/) here).
 3. Copy the patched `client.dll` into `steamapps\common\GarrysMod\garrysmod\bin\client.dll` (x86) or `steamapps\common\GarrysMod\bin\win64\client.dll` (x64).
 4. Start Garry's Mod.
