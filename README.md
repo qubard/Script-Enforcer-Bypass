@@ -1,9 +1,9 @@
 # Script-Enforcer-Bypass
 A Garry's Mod Script Enforcer bypass to allow `lua_openscript_cl` commands to execute. 
 
-* **Easy to use**, compatible with any Garry's Mod version
-* Simple, runs one Python script!
-* 64-bit and 32-bit compatible
+* 💫 **Easy to use**, compatible with any Garry's Mod version
+* 💯 **Lightweight**, run one Python command
+* 💥 64-bit and 32-bit compatible
 
 # Recommended Installation (Using Python)
 
