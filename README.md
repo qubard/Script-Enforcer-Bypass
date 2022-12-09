@@ -1,11 +1,11 @@
 # Script-Enforcer-Bypass
 A Garry's Mod Script Enforcer bypass to allow `lua_openscript_cl` commands to execute. 
 
-* 💫 **Easy to use**, compatible with any Garry's Mod version
-* 💯 **Lightweight**, run one Python command
-* 💥 64-bit and 32-bit compatible
+* 💫 **Easy to use**, 
+* 💡 Safe, lightweight and simple
+* 💥 64-bit and 32-bit support
 
-# Recommended Installation (Using Python)
+# Recommended Installation (Using Python) 🐍
 
 1. Copy `steamapps\common\GarrysMod\garrysmod\bin\client.dll` (x86) or `steamapps\common\GarrysMod\bin\win64\client.dll` (x64) to the current directory.
 2. Run `python patch.py` (get [Python3](https://www.python.org/downloads/) here).
