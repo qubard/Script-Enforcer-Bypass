@@ -1,7 +1,9 @@
 # Script-Enforcer-Bypass
 A Garry's Mod Script Enforcer bypass to allow `lua_openscript_cl` commands to execute. 
 
-[Get it from the releases page.](https://github.com/qubard/Script-Enforcer-Bypass/releases)
+* Easily to use, works across any Garry's Mod version
+* Simple, runs one Python script!
+* 64-bit and 32-bit compatible
 
 # Recommended Installation (Using Python)
 
@@ -12,6 +14,8 @@ A Garry's Mod Script Enforcer bypass to allow `lua_openscript_cl` commands to ex
 5. Load scripts from your `lua/` directory with `lua_openscript_cl <filename>` using the console.
 
 # Easy Installation
+
+[Get the latest .dll from the releases page.](https://github.com/qubard/Script-Enforcer-Bypass/releases)
 
 1. Drag and drop `client.dll` into `steamapps\common\Garrysmod\bin`.
 2. Restart Garry's Mod
