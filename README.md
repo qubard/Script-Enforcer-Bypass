@@ -25,7 +25,7 @@ This isn't guaranteed to work if `client.dll` in this repository has not been up
 
 # How It Works
 
-This NOPs the `JNZ` branch called by `lua_openscript_cl` and adds `mov byte ptr [ecx + b8], 1` (x86) or `mov byte ptr [rcx + 168], 1` (x64) aka byte patch `C681B800000001FF 90 84 01 00 00 5E 5D C3` to the end of the function call to escalate lua execution privileges and change where the file loader searches for your script.
+This NOPs the `JNZ` branch called by `lua_openscript_cl` and adds `mov byte ptr [ecx + b8], 1` (x86) or `mov byte ptr [rcx + 168], 1` (x64) aka byte patch `C681B800000001FF 90 84 01 00 00 5E 5D C3` to the end of the function call to escalate lua execution privileges and change where the file loader searches for your script. [For more info see this article.](https://tarasyk.ca/2019/12/14/bypassing-script-enforcer.html)
 
 This patch does NOT modify the `sv_allowcslua` convar whatsoever which can easily be detected by servers, and otherwise is fully undetectable (there are no sigchecks on `client.dll`) + can't get you VAC banned (no VAC on garry's mod).
 
